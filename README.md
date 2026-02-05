@@ -1,4 +1,5 @@
 # 🎯 VoiceFlow AI Analytics
+🚀 **Live URL:** https://voiceflowanalysis-o792appuv8n3w3p7exfruz.streamlit.app/
 
 This Customer Feedback Intelligence Platform leverages AI, constructed with Streamlit, LangChain, Llama 3.3 (Groq), and RAG.
 
@@ -30,7 +31,7 @@ This app looks at customer reviews, does sentiment analysis, gives you insights,
 
 The system works in a Retrieval-Augmented Generation (RAG) way:
 
-1. **Input Data**- The user uploads a CSV file containing customer reviews.
+1. **Input Data file**- The user uploads a CSV file containing customer reviews.
 
 2. **Preprocessing**- it has the ability to figure out how people feel.
    - Automatic grouping (Delivery, Pricing, Technical Issues, etc.).
@@ -182,6 +183,7 @@ data/reviews.csv
 
 Priyanshu Sinha
 📄 Resume: https://drive.google.com/file/d/1EZBAGbStVipudz4ZSpxZMK0v6qDhUHXf/view?usp=sharing
+https://voiceflowanalysis-o792appuv8n3w3p7exfruz.streamlit.app/
 ---
 
 Thanks for referring the project.
