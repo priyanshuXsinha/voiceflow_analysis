@@ -43,6 +43,7 @@ The system works in a Retrieval-Augmented Generation (RAG) way:
      - What customers think- Answers from AI analytics
      - Replies to professional emails (friendly, professional, or apologetic).
 
+
 ---
 - Model for embedding: `all-MiniLM-L6-v2`
 - Chroma: Vector DB
@@ -50,6 +51,32 @@ The system works in a Retrieval-Augmented Generation (RAG) way:
 - Reranker: "ms-marco-MiniLM-L-12-v2"
 - LLM: "llama-3.3-70b-versatile"
 - Temp: 0.3
+
+
+---
+
+## 🗂️ Data Schema
+
+The system needs a CSV file with comments from customers.
+
+### Required Column (found automatically): `review_text`- "read"
+- "text"
+- "say"
+- "response"
+- "sentiment" can be good, bad, or neutral (thanks to TextBlob)
+- "rating" is a number from 1 to 5 that comes from the sentiment score.
+- The term "category" could refer to several areas, such as delivery, product quality, technical problems, customer service, and pricing, among others.---
+---
+## 🧱 Indexing
+
+- Each row of the dataset makes up a LangChain "Document."
+- The **HuggingFace `all-MiniLM-L6-v2`** library creates embeddings.
+- The written materials are stored in a collection called a "Chroma Vector Database."
+
+1. User query → semantic search ("Top-K = 15")
+2. FlashRank reranker makes things more useful
+3. The best reviews that have been changed are sent to **Llama-3.3-70B** to make the final response.
+---
 
 ## 📂 How the Project Is Set Up
 
@@ -122,6 +149,7 @@ The app does this on its own:
 4. FlashRank reordering  
 5. Llama-3.3 gives us new ideas  
 ---
+## 💬 Example Queries
 
 What are the most common complaints from customers?  
 What groups have the most problems?  
@@ -148,7 +176,8 @@ elif os.path.exists("data/reviews.csv"):
 
 ---
 
-Priyanshu Sinha  
+Priyanshu Sinha
+📄 Resume: https://drive.google.com/file/d/1EZBAGbStVipudz4ZSpxZMK0v6qDhUHXf/view?usp=sharing
 ---
 
 Thanks for referring the project.
