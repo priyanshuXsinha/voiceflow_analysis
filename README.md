@@ -1,6 +1,6 @@
 # 🎯 VoiceFlow AI Analytics
 
-Built with **Streamlit, LangChain, Llama 3.3 (Groq), and RAG**, the **Customer Feedback Intelligence Platform** uses AI.
+This Customer Feedback Intelligence Platform leverages AI, constructed with Streamlit, LangChain, Llama 3.3 (Groq), and RAG.
 
 This app looks at customer reviews, does sentiment analysis, gives you insights, has an AI chat assistant for deep analytics, and makes friendly, professional, or apologetic emails to customers based on reviews.
 ---
@@ -21,14 +21,16 @@ This app looks at customer reviews, does sentiment analysis, gives you insights,
 - ChromaDB
 - FlashRank
 - Embeddings from HuggingFace
-- TextBlob- Plotly
+- TextBlob
+- Plotly
+
 
 ---
 ## 📐 Building-Architecture
 
 The system works in a Retrieval-Augmented Generation (RAG) way:
 
-1. **Input Data**- The user uploads a CSV file with reviews from customers.
+1. **Input Data**- The user uploads a CSV file containing customer reviews.
 
 2. **Preprocessing**- it has the ability to figure out how people feel.
    - Automatic grouping (Delivery, Pricing, Technical Issues, etc.).
@@ -39,7 +41,7 @@ The system works in a Retrieval-Augmented Generation (RAG) way:
 4. **Retrieval Pipeline**- Using the Lang Chain retriever for top-level semantic retrieval.
    - FlashRank reranker makes context more relevant.
 
-5. **Making LLMs**- Groq Llama-3.3-70B makes:
+5. **LLM Response Generation**- Groq Llama-3.3-70B makes:
      - What customers think- Answers from AI analytics
      - Replies to professional emails (friendly, professional, or apologetic).
 
@@ -80,10 +82,15 @@ The system needs a CSV file with comments from customers.
 
 ## 📂 How the Project Is Set Up
 
-voiceflow_analysis/ │ ├── app.py
-├──.env
-├── requirements.txt │ ├── data/ │ └── reviews.csv
-│ └── README.md
+voiceflow_analysis/
+│
+├── app.py
+├── .env
+├── requirements.txt
+├── data/
+│   └── reviews.csv
+└── README.md
+
 
 ⚠️ The app only works when you upload CSV files by hand using the sidebar file uploader. To see sample test data, go to `data/reviews.csv`
 
@@ -119,7 +126,8 @@ pip install -r requirements.txt
 
 ## ▶️ Run on your own computer
 
-run app.py in streamlit
+streamlit run app.py
+
 ---
 
 ## 📊 Format of the Dataset
@@ -169,10 +177,6 @@ Which changes should we make first?
 Check to see if your demo dataset is at:
 
 data/reviews.csv
-
-And your app loads it like this:
-
-elif os.path.exists("data/reviews.csv"):
 
 ---
 
