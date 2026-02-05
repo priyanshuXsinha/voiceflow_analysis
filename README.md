@@ -29,7 +29,7 @@ This app looks at customer reviews, does sentiment analysis, gives you insights,
 ---
 ## 📐 Building-Architecture
 
-The system works in a Retrieval-Augmented Generation (RAG) way:
+The system follows a Retrieval-Augmented Generation (RAG) architecture:
 
 1. **Input Data file**- The user uploads a CSV file containing customer reviews.
 
@@ -60,12 +60,15 @@ The system works in a Retrieval-Augmented Generation (RAG) way:
 
 ## 🗂️ Data Schema
 
-The system needs a CSV file with comments from customers.
+The system expects a CSV file containing customer feedback text.
 
-### Required Column (found automatically): `review_text`- "read"
-- "text"
-- "say"
-- "response"
+### Supported Text Columns (auto-detected)
+- review 
+- review_text
+- text
+- comment
+- feedback
+### Auto-Generated Fields
 - "sentiment" can be good, bad, or neutral (thanks to TextBlob)
 - "rating" is a number from 1 to 5 that comes from the sentiment score.
 - The term "category" could refer to several areas, such as delivery, product quality, technical problems, customer service, and pricing, among others.---
@@ -175,15 +178,13 @@ Which changes should we make first?
 
 ## 🧾 Notes on Deployment
 
-Check to see if your demo dataset is at:
-
-data/reviews.csv
+⚠️ Upload a CSV file manually using the sidebar file uploader to start analysis.
 
 ---
 
 Priyanshu Sinha
 📄 Resume: https://drive.google.com/file/d/1EZBAGbStVipudz4ZSpxZMK0v6qDhUHXf/view?usp=sharing
-https://voiceflowanalysis-o792appuv8n3w3p7exfruz.streamlit.app/
+
 ---
 
 Thanks for referring the project.
